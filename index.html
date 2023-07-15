@@ -498,8 +498,39 @@
 
         <p class="mt-4">
           Invista no seu crescimento com o meu programa de mentoria a um preço
-          acessível.
+          acessível. <span class="font-semibold">Aproveite a promoção!</span>
         </p>
+      </div>
+
+      <div
+        class="w-full max-w-5xl mx-auto flex justify-center gap-4 text-[#F8FAFC] mt-16"
+      >
+        <div
+          class="bg-red-500 w-[112px] py-4 rounded-lg flex flex-col items-center justify-center"
+        >
+          <span class="text-2xl font-semibold" id="days">0</span> dias
+        </div>
+
+        <div
+          class="bg-red-500 w-[112px] py-4 rounded-lg flex flex-col items-center justify-center"
+        >
+          <span class="text-2xl font-semibold" id="hours">0</span>
+          horas
+        </div>
+
+        <div
+          class="bg-red-500 w-[112px] py-4 rounded-lg flex flex-col items-center justify-center"
+        >
+          <span class="text-2xl font-semibold" id="minutes">0</span>
+          minutos
+        </div>
+
+        <div
+          class="bg-red-500 w-[112px] py-4 rounded-lg flex flex-col items-center justify-center"
+        >
+          <span class="text-2xl font-semibold" id="seconds">0</span>
+          segundos
+        </div>
       </div>
 
       <div
@@ -566,6 +597,7 @@
     </footer>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/scripts/yscountdown.min.js"></script>
 
     <script>
       function importHotmart() {
@@ -573,16 +605,32 @@
         imported.src = "https://static.hotmart.com/checkout/widget.min.js";
 
         document.head.appendChild(imported);
-
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = "https://static.hotmart.com/css/hotmart-fb.min.css";
-
-        document.head.appendChild(link);
       }
 
       importHotmart();
+    </script>
+
+    <script>
+      var daysElement = document.querySelector("#days");
+      var hoursElement = document.querySelector("#hours");
+      var minutesElement = document.querySelector("#minutes");
+      var secondsElement = document.querySelector("#seconds");
+      var containerElement = document.querySelector(".container");
+      var endDate = new Date().getFullYear() + "/07/21";
+
+      var myCountDown = new ysCountDown(endDate, function (
+        remaining,
+        finished
+      ) {
+        if (finished) {
+          containerElement.textContent = "Expired";
+        }
+
+        daysElement.textContent = remaining.totalDays;
+        hoursElement.textContent = remaining.hours;
+        minutesElement.textContent = remaining.minutes;
+        secondsElement.textContent = remaining.seconds;
+      });
     </script>
 
     <!-- Google tag (gtag.js) -->
