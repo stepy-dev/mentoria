@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="/app.css" />
     <link rel="stylesheet" href="/styles.css" />
+
     <title>Mentoria Vue.js</title>
   </head>
 
@@ -65,16 +66,18 @@
       </div>
 
       <div
-        class="w-full max-w-2xl mx-auto aspect-[4/2.665] rounded-lg bg-white p-2 shadow-xl mb-12 md:-mb-48"
+        class="w-full max-w-3xl mx-auto md:min-h-[420px] rounded-lg bg-white p-2 shadow-xl mb-12 md:-mb-48"
       >
-        <iframe
-          class="w-full aspect-[4/2.665]"
-          src="https://www.youtube-nocookie.com/embed/mdJDPepGOAM"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <mux-player
+          class="w-full md:min-h-[420px]"
+          theme="microvideo"
+          poster="https://image.mux.com/kC2BsmFWCx02Su8J00oz602rK6tWiV00C7mXS63lr59aZ1c/animated.gif?start=50&width=640"
+          stream-type="on-demand"
+          playback-id="kC2BsmFWCx02Su8J00oz602rK6tWiV00C7mXS63lr59aZ1c"
+          metadata-video-title="Mentoria Vue.js - Apresentação"
+          primary-color="#FFFFFF"
+          secondary-color="#41B883"
+        ></mux-player>
       </div>
     </div>
     <!-- end hero-->
@@ -604,6 +607,11 @@
       </div>
     </footer>
 
+    <script
+      type="module"
+      src="//cdn.jsdelivr.net/npm/@mux/mux-player/themes/microvideo.js/+esm"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/@mux/mux-player"></script>
     <script src="/scripts/yscountdown.min.js"></script>
 
     <script>
@@ -623,7 +631,7 @@
       var minutesElement = document.querySelector("#minutes");
       var secondsElement = document.querySelector("#seconds");
       var containerElement = document.querySelector(".container");
-      var endDate = new Date().getFullYear() + "/07/21";
+      var endDate = new Date().getFullYear() + "/07/23";
 
       var myCountDown = new ysCountDown(endDate, function (
         remaining,

@@ -3,3 +3,9 @@
 html {
   font-family: "Poppins", sans-serif !important;
 }
+
+mux-player {
+  aspect-ratio: 16 / 9;
+  --media-object-fit: cover;
+  --media-object-position: center;
+}

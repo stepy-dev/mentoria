@@ -342,9 +342,6 @@ video {
 .hidden {
   display: none;
 }
-.aspect-\[4\/2\.665\] {
-  aspect-ratio: 4/2.665;
-}
 .h-16 {
   height: 4rem;
 }
@@ -662,6 +659,9 @@ video {
   }
   .md\:flex {
     display: flex;
+  }
+  .md\:min-h-\[420px\] {
+    min-height: 420px;
   }
   .md\:max-w-7xl {
     max-width: 80rem;
