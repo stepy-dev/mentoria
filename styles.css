@@ -9,3 +9,14 @@ mux-player {
   --media-object-fit: cover;
   --media-object-position: center;
 }
+
+.whatsapp {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.whatsapp img {
+  width: 5rem;
+  height: 5rem;
+}
